@@ -4,8 +4,8 @@ import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useAuth } from "../../context/AuthContext.jsx";
 import { useToast } from "../../components/Toast.jsx";
-import latarsekolah from "../../images/latarsekolah.png";
-import logoNoBg from "../../images/logonobg.png";
+import latarsekolah from "../../images/latarsekolah.webp";
+import logoNoBg from "../../images/logonobg.webp";
 
 const routeByRole = {
   admin: "/admin",

@@ -123,9 +123,9 @@ export default function SiswaDashboard() {
             <p className="text-xs text-slate-500 mt-2">Jl. Graha Prima Raya No.72, Mangunjaya, Kec. Tambun Selatan, Kabupaten Bekasi, Jawa Barat 17510</p>
           </div>
 
-          <div className="grid gap-6 xl:grid-cols-[340px_1fr]">
+          <div className="grid gap-6 xl:grid-cols-[340px_1fr] w-full">
             {/* Sidebar Card Profil (Premium Style) */}
-            <AnimatedCard hoverEffect={false} className="flex flex-col items-center text-center space-y-5 print:border-0 print:p-0 print:text-left print:items-start print:space-y-2.5 h-fit">
+            <AnimatedCard hoverEffect={false} className="w-full flex flex-col items-center text-center space-y-5 print:border-0 print:p-0 print:text-left print:items-start print:space-y-2.5 h-fit">
               <div className="no-print relative">
                 <Avatar photoUrl={profile.photo_url} name={profile.name} size="lg" className="ring-4 ring-teal-500/10 shadow-lg" />
                 <div className="absolute -bottom-1.5 -right-1.5 p-1 rounded-full bg-teal-500 text-white shadow-sm ring-2 ring-white">
@@ -138,7 +138,7 @@ export default function SiswaDashboard() {
                 <p className="text-[10px] font-extrabold text-teal-700 mt-1 uppercase tracking-widest font-mono">NIS {profile.nis}</p>
               </div>
 
-              <div className="w-full bg-slate-50 p-4.5 rounded-2xl border border-slate-100/80 text-left text-xs space-y-4 print:bg-transparent print:border-0 print:p-0 print:space-y-1.5 print:mt-2">
+              <div className="w-full bg-slate-50 p-4 rounded-2xl border border-slate-100/80 text-left text-xs space-y-4 print:bg-transparent print:border-0 print:p-0 print:space-y-1.5 print:mt-2">
                 <div className="flex justify-between print:justify-start print:gap-4 border-b border-slate-200/50 pb-2 print:border-b-0 print:pb-0">
                   <span className="font-bold text-slate-400 uppercase print:w-28 text-[9px] tracking-wider">Kelas saat ini</span>
                   <span className="font-extrabold text-slate-800">Kelas {profile.class_name || "-"}</span>
@@ -300,7 +300,7 @@ export default function SiswaDashboard() {
             </AnimatedCard>
 
             {/* Grid Statistik & Tabel Rekap */}
-            <div className="space-y-6">
+            <div className="space-y-6 min-w-0 w-full">
               {/* Statistik Mini (Hanya Screen) */}
               <div className="no-print grid gap-4 grid-cols-2 md:grid-cols-4">
                 <AnimatedCard className="flex flex-col justify-center border-l-4 border-l-teal-500 p-4">
@@ -329,12 +329,12 @@ export default function SiswaDashboard() {
 
                 <AnimatedCard className={`flex flex-col justify-center p-4 border-l-4 ${generalStatus === "Lulus" ? "border-l-teal-500 bg-teal-50/10" : "border-l-rose-500 bg-rose-50/10"}`}>
                   <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest">Status Kelulusan</span>
-                  <p className={`text-lg font-black mt-1 font-plus-jakarta ${generalStatus === "Lulus" ? "text-teal-700" : "text-rose-700"}`}>{generalStatus === "Lulus" ? "Sangat Memuaskan" : "Perlu Bimbingan"}</p>
+                  <p className={`text-xs sm:text-sm md:text-lg font-black mt-1 font-plus-jakarta ${generalStatus === "Lulus" ? "text-teal-700" : "text-rose-700"}`}>{generalStatus === "Lulus" ? "Sangat Memuaskan" : "Perlu Bimbingan"}</p>
                 </AnimatedCard>
               </div>
 
               {/* Tabel Nilai */}
-              <AnimatedCard hoverEffect={false} className="print:border-0 print:p-0 print:shadow-none">
+              <AnimatedCard hoverEffect={false} className="w-full overflow-hidden print:border-0 print:p-0 print:shadow-none">
                 <h3 className="text-sm font-black text-slate-900 border-b border-slate-100 pb-3.5 mb-5 print:text-xs print:font-extrabold print:pb-1.5 print:mb-2 font-plus-jakarta">Lembar Hasil Kompetensi Belajar</h3>
                 {grades.length === 0 ? (
                   <EmptyState title="Nilai belum dimasukkan" description="Lembar kompetensi nilai rapor Anda akan muncul di sini setelah divalidasi oleh guru kelas." icon={BookOpenCheck} />

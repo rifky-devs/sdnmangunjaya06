@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { ArrowRight, BookOpenCheck, ShieldCheck, UsersRound, MapPin, Clock, Map } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
-import logoNoBg from "../../images/logonobg.png";
-import latarsekolah from "../../images/latarsekolah.png";
+import logoNoBg from "../../images/logonobg.webp";
+import latarsekolah from "../../images/latarsekolah.webp";
 import { useFetch } from "../../hooks/useFetch.js";
 
 const features = [

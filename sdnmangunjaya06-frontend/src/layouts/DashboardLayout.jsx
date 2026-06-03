@@ -3,7 +3,7 @@ import { useState } from "react";
 import { NavLink, Outlet, useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { useAuth } from "../context/AuthContext.jsx";
-import logoNoBg from "../images/logonobg.png";
+import logoNoBg from "../images/logonobg.webp";
 import Avatar from "../components/ui/Avatar.jsx";
 import PageBackground from "../components/PageBackground.jsx";
 import PageWrapper from "../components/PageWrapper.jsx";
@@ -147,7 +147,7 @@ export default function DashboardLayout() {
         </div>
       )}
 
-      <main className="lg:pl-72 min-h-screen flex flex-col">
+      <main className="lg:pl-72 min-h-screen flex flex-col min-w-0 w-full">
         <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/90 backdrop-blur-sm">
           <div className="flex h-20 items-center justify-between px-4 md:px-8">
             <div className="flex items-center gap-3">
@@ -208,7 +208,7 @@ export default function DashboardLayout() {
           </div>
         </header>
 
-        <section className="p-4 md:p-8 flex-1 flex flex-col relative z-10">
+        <section className="p-4 md:p-8 flex-1 flex flex-col relative z-10 min-w-0 w-full">
           <AnimatePresence mode="wait">
             <PageWrapper key={location.pathname}>
               <Outlet />
