@@ -133,7 +133,6 @@ export default function TeachersPage() {
   const handleAddSubmit = async (event) => {
     event.preventDefault();
     setSaving(true);
-    setMessage("");
 
     // Frontend validation
     const usernameRegex = /^[A-Za-z0-9]+$/;

@@ -89,7 +89,6 @@ export default function UsersPage() {
 
   const handleAddSubmit = async (e) => {
     e.preventDefault();
-    setMessage("");
     setError("");
 
     // Frontend validation for username pattern and required fields
@@ -146,7 +145,6 @@ export default function UsersPage() {
 
   const handleEditSubmit = async (e) => {
     e.preventDefault();
-    setMessage("");
 
     try {
       setEditSaving(true);
