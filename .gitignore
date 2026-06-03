@@ -1,0 +1,54 @@
+# dependencies
+node_modules/
+*/node_modules/
+
+# env / secrets
+.env
+.env.local
+.env.development
+.env.production
+*.env
+
+# build
+dist/
+build/
+*/dist/
+*/build/
+
+# logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# uploads / private files
+uploads/
+*/uploads/
+private/
+secrets/
+backup/
+backups/
+
+# database private dump
+*.sql
+!database/schema.sql
+!database/structure.sql
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# cache
+.cache/
+.tmp/
+temp/
+*.zip
+*.rar
+*.7z
+node_modules/
+.env
+uploads/
+.vscode/
