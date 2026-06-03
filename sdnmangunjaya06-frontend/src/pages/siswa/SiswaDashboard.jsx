@@ -17,12 +17,6 @@ export default function SiswaDashboard() {
   });
   const { showToast } = useToast();
 
-  React.useEffect(() => {
-    if (error) {
-      showToast("Gagal memuat profil akademik siswa.", "error");
-    }
-  }, [error, showToast]);
-
   const grades = data?.grades || [];
   const summary = data?.summary || {};
   const profile = data?.profile;

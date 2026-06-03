@@ -4,12 +4,12 @@ import { motion } from "framer-motion";
 export default function PageBackground({ role = "default", children }) {
   // Themes: primary school colors are green/teal/emerald, white, slate, and light blue accents.
   const gradientMap = {
-    admin: "from-slate-50 via-white to-emerald-50/40",
-    guru: "from-slate-50 via-white to-teal-50/40",
-    siswa: "from-slate-50 via-white to-cyan-50/30",
-    login: "from-slate-50 via-white to-teal-50",
-    laporan: "from-slate-50 via-white to-slate-100/50",
-    default: "from-slate-50 via-white to-teal-50/20"
+    admin: "from-slate-100 via-slate-50/60 to-emerald-50/40",
+    guru: "from-slate-100 via-slate-50/60 to-teal-50/40",
+    siswa: "from-slate-100 via-slate-50/60 to-cyan-50/30",
+    login: "from-slate-100 via-slate-50/60 to-teal-50",
+    laporan: "from-slate-100 via-slate-50/60 to-slate-100/50",
+    default: "from-slate-100 via-slate-50/60 to-teal-50/20"
   };
 
   const glowCircles = {

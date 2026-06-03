@@ -368,7 +368,14 @@ export default function StudentsPage() {
       <div className="card overflow-hidden">
         {loading && <p className="p-6 text-sm text-slate-500">Memuat data siswa...</p>}
         {error && <p className="p-6 text-sm font-semibold text-rose-600">{error}</p>}
-        {!loading && paginatedStudents.length === 0 && <EmptyState title="Siswa tidak ditemukan" description="Tidak ada siswa terdaftar yang cocok dengan pencarian atau filter Anda." />}
+        {!loading && paginatedStudents.length === 0 && (
+          <EmptyState
+            title="Siswa tidak ditemukan"
+            description="Tidak ada siswa terdaftar yang cocok dengan pencarian atau filter Anda. Anda dapat mendaftarkan siswa baru secara langsung."
+            actionText="+ Tambah Siswa Baru"
+            onAction={() => setShowAddModal(true)}
+          />
+        )}
 
         {!loading && paginatedStudents.length > 0 && (
           <>

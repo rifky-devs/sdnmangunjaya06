@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Printer, Download, BookOpen, ClipboardCheck, GraduationCap, Award, SlidersHorizontal, RefreshCw } from "lucide-react";
 import PageHeader from "../../components/ui/PageHeader.jsx";
 import EmptyState from "../../components/ui/EmptyState.jsx";
@@ -9,6 +10,7 @@ import autoTable from "jspdf-autotable";
 import { useToast } from "../../components/Toast.jsx";
 
 export default function ReportsPage({ mode = "admin" }) {
+  const navigate = useNavigate();
   const endpoint = mode === "guru" ? "/grades/my-subject" : "/grades";
   const { data, loading, error, refetch } = useFetch(endpoint, { initialData: [] });
   const { data: classes } = useFetch("/classes", { initialData: [] });
@@ -376,7 +378,14 @@ export default function ReportsPage({ mode = "admin" }) {
       <div className="card overflow-hidden">
         {loading && <p className="text-sm text-slate-500 p-6 no-print">Memuat rekap laporan nilai...</p>}
         {error && <p className="text-sm font-semibold text-rose-600 p-6 no-print">{error}</p>}
-        {!loading && filteredData.length === 0 && <EmptyState title="Laporan masih kosong" description="Data nilai akan muncul setelah guru menginput nilai siswa." />}
+        {!loading && filteredData.length === 0 && (
+          <EmptyState
+            title="Laporan masih kosong"
+            description={mode === "guru" ? "Anda belum menginput nilai siswa. Mulai masukkan nilai siswa untuk mengisi laporan." : "Data nilai akan muncul setelah guru menginput nilai siswa."}
+            actionText={mode === "guru" ? "+ Input Nilai Siswa" : undefined}
+            onAction={mode === "guru" ? () => navigate("/guru/input-nilai") : undefined}
+          />
+        )}
 
         {filteredData.length > 0 && (
           <div id="print-area" className="p-6 print:p-0">

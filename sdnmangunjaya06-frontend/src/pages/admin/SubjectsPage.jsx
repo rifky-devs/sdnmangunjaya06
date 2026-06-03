@@ -59,7 +59,12 @@ export default function SubjectsPage() {
 
         <div className="card">
           {loading && <p>Memuat data...</p>}
-          {!loading && data?.length === 0 && <EmptyState />}
+          {!loading && data?.length === 0 && (
+            <EmptyState
+              title="Belum ada mata pelajaran"
+              description="Daftar mata pelajaran masih kosong. Silakan gunakan formulir di sebelah kiri untuk menambahkan mata pelajaran baru."
+            />
+          )}
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
             {data?.map((item) => (
               <div key={item.id} className="flex items-center justify-between rounded-2xl border border-slate-100 p-4">

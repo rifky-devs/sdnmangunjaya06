@@ -35,6 +35,7 @@ export class Teacher {
         s.name AS subject_name
       FROM teachers t
       JOIN subjects s ON s.id = t.subject_id
+      JOIN users u ON u.id = t.user_id
       WHERE t.user_id = ?
       LIMIT 1
       `,

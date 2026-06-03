@@ -332,7 +332,14 @@ export default function UsersPage() {
 
         {loading && <p className="p-6 text-sm text-slate-500">Memuat data akun...</p>}
         {error && <p className="p-6 text-sm font-semibold text-rose-600">{error}</p>}
-        {!loading && filteredUsers.length === 0 && <EmptyState title="Akun tidak ditemukan" description="Tidak ada akun yang sesuai dengan filter atau kata kunci." />}
+        {!loading && filteredUsers.length === 0 && (
+          <EmptyState
+            title="Akun tidak ditemukan"
+            description="Tidak ada akun yang sesuai dengan filter atau kata kunci. Anda dapat mendaftarkan akun baru secara langsung."
+            actionText="+ Tambah Akun Baru"
+            onAction={() => setShowAddModal(true)}
+          />
+        )}
 
         {!loading && filteredUsers.length > 0 && (
           <div className="overflow-x-auto">

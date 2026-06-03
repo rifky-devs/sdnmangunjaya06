@@ -367,7 +367,14 @@ export default function TeachersPage() {
       <div className="card overflow-hidden">
         {loading && <p className="p-6 text-sm text-slate-500">Memuat data guru...</p>}
         {error && <p className="p-6 text-sm font-semibold text-rose-600">{error}</p>}
-        {!loading && paginatedTeachers.length === 0 && <EmptyState title="Guru tidak ditemukan" description="Tidak ada guru terdaftar yang cocok dengan pencarian atau filter Anda." />}
+        {!loading && paginatedTeachers.length === 0 && (
+          <EmptyState
+            title="Guru tidak ditemukan"
+            description="Tidak ada guru terdaftar yang cocok dengan pencarian atau filter Anda. Anda dapat meregistrasikan guru baru secara langsung."
+            actionText="+ Tambah Guru Baru"
+            onAction={() => setShowAddModal(true)}
+          />
+        )}
 
         {!loading && paginatedTeachers.length > 0 && (
           <>

@@ -4,26 +4,18 @@ import {
   FileText, PlusCircle, Search, Printer, ArrowRight,
   Bookmark, Award, GraduationCap as StudentIcon
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import PageHeader from '../../components/ui/PageHeader.jsx';
 import AnimatedCard from '../../components/AnimatedCard.jsx';
 import LoadingSkeleton from '../../components/LoadingSkeleton.jsx';
 import EmptyState from '../../components/EmptyState.jsx';
 import StatusBadge from '../../components/ui/StatusBadge.jsx';
 import { useFetch } from '../../hooks/useFetch.js';
-import { useToast } from '../../components/Toast.jsx';
-
 export default function GuruDashboard() {
+  const navigate = useNavigate();
   const { data, loading, error } = useFetch('/dashboard/guru', {
     initialData: { stats: {}, recent: [] }
   });
-  const { showToast } = useToast();
-
-  React.useEffect(() => {
-    if (error) {
-      showToast("Gagal memuat status pengajaran Anda.", "error");
-    }
-  }, [error, showToast]);
 
   const stats = data?.stats || {};
   const recent = data?.recent || [];
@@ -128,7 +120,13 @@ export default function GuruDashboard() {
 
           <div className="flex-1 overflow-y-auto pr-1 space-y-3">
             {recent.length === 0 ? (
-              <EmptyState title="Belum ada input nilai" description="Mulai lakukan input nilai harian siswa dengan mengklik tombol Aksi Cepat." icon={ClipboardCheck} />
+              <EmptyState
+                title="Belum ada input nilai"
+                description="Mulai lakukan input nilai harian siswa dengan mengklik tombol di bawah ini."
+                icon={ClipboardCheck}
+                actionText="+ Mulai Input Nilai"
+                onAction={() => navigate("/guru/input-nilai")}
+              />
             ) : (
               recent.map((item) => (
                 <div key={item.id} className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-slate-100 p-4 hover:bg-slate-50/50 hover:border-slate-200 transition-all">

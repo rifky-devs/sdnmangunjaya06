@@ -116,30 +116,30 @@ export default function AdminDashboard() {
           <p className="text-3xl font-black text-slate-900 mt-4 font-plus-jakarta">{stats.classes || 0}</p>
         </AnimatedCard>
 
-        <AnimatedCard className="flex flex-col justify-between border-l-4 border-l-indigo-500">
+        <AnimatedCard className="flex flex-col justify-between border-l-4 border-l-emerald-800">
           <div className="flex items-center justify-between">
             <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Mata Pelajaran</span>
-            <div className="p-1.5 rounded-xl bg-indigo-50 text-indigo-600">
+            <div className="p-1.5 rounded-xl bg-emerald-50 text-emerald-800">
               <BookOpen size={16} />
             </div>
           </div>
           <p className="text-3xl font-black text-slate-900 mt-4 font-plus-jakarta">{stats.subjects || 0}</p>
         </AnimatedCard>
 
-        <AnimatedCard className="flex flex-col justify-between border-l-4 border-l-sky-500">
+        <AnimatedCard className="flex flex-col justify-between border-l-4 border-l-slate-800">
           <div className="flex items-center justify-between">
             <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Akun Aktif</span>
-            <div className="p-1.5 rounded-xl bg-sky-50 text-sky-600">
+            <div className="p-1.5 rounded-xl bg-slate-100 text-slate-800">
               <UserCog size={16} />
             </div>
           </div>
           <p className="text-3xl font-black text-slate-900 mt-4 font-plus-jakarta">{stats.activeUsers || 0}</p>
         </AnimatedCard>
 
-        <AnimatedCard className="flex flex-col justify-between border-l-4 border-l-pink-500">
+        <AnimatedCard className="flex flex-col justify-between border-l-4 border-l-teal-800">
           <div className="flex items-center justify-between">
             <span className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Nilai Masuk</span>
-            <div className="p-1.5 rounded-xl bg-pink-50 text-pink-600">
+            <div className="p-1.5 rounded-xl bg-teal-50 text-teal-800">
               <ClipboardCheck size={16} />
             </div>
           </div>
@@ -191,13 +191,13 @@ export default function AdminDashboard() {
 
             <Link
               to="/admin/guru"
-              className="group flex items-center justify-between p-4 rounded-2xl border border-indigo-100 bg-indigo-50/40 text-indigo-800 hover:bg-indigo-50 hover:shadow-sm transition-all text-xs font-bold font-plus-jakarta"
+              className="group flex items-center justify-between p-4 rounded-2xl border border-emerald-100 bg-emerald-50/40 text-emerald-800 hover:bg-emerald-50 hover:shadow-sm transition-all text-xs font-bold font-plus-jakarta"
             >
               <div className="flex items-center gap-3">
-                <UserRound size={16} className="text-indigo-600 group-hover:scale-110 transition" />
+                <UserRound size={16} className="text-emerald-600 group-hover:scale-110 transition" />
                 <span>Registrasi Guru</span>
               </div>
-              <ArrowRight size={14} className="text-indigo-500 translate-x-0 group-hover:translate-x-1 transition" />
+              <ArrowRight size={14} className="text-emerald-500 translate-x-0 group-hover:translate-x-1 transition" />
             </Link>
 
             <Link

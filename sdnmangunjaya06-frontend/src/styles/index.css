@@ -42,10 +42,27 @@ body {
   }
 
   .table-head {
-    @apply bg-slate-50 text-left text-xs font-bold uppercase tracking-wide text-slate-500;
+    @apply bg-slate-900 text-left text-[11px] font-black uppercase tracking-wider text-slate-100;
+  }
+
+  .table-head th {
+    @apply px-6 py-4 text-slate-100 font-black align-middle;
   }
 
   .table-cell {
-    @apply border-b border-slate-100 px-4 py-3 text-sm text-slate-700;
+    @apply border-b border-slate-100 px-6 py-4 text-xs font-semibold text-slate-700 leading-normal align-middle;
   }
+}
+
+/* Custom global table styling */
+tbody tr:nth-child(even) {
+  background-color: #f8fafc;
+}
+
+tbody tr {
+  transition: background-color 200ms ease;
+}
+
+tbody tr:hover {
+  background-color: rgba(20, 184, 166, 0.04) !important;
 }
